@@ -1,0 +1,30 @@
+
+Enkelt lang stribe(0.9cm) (1/1 længde distance (32cm))
+0.90 Mohm - slap
+0.77 Mohm - fuldt udstrukken 
+
+Enkelt lang stribe(0.9cm) (1/2 længde distance (16cm))
+0.43 Mohm - normal
+0.37 Mohm - fuldt udstrukken
+
+Enkelt lang stribe(0.9cm) (1/4 længde distance (8cm))
+0.25 Mohm - slap
+0.20 Mohm - fuldt udstrukken
+
+
+
+
+
+
+Zig sag stribe:
+0.6Mohm - normal
+0.53 Mohm - fuld udstrukken
+
+
+Breid stribe(5.5cm) (1/1 længde distance (9cm))
+80Kohm - normal
+70Kohm - fuld udstrukken
+
+Breid stribe(5.5cm) (1/1 længde distance (4.5cm))
+55Kohm - normal
+48Kohm - fuld udstrukken
