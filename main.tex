@@ -82,7 +82,7 @@
 
 % Uncomment to disable hyphenation (not recommended)
 % https://twitter.com/anjirokhan/status/546046683331973120
-\RaggedRight{} 
+\RaggedRight{}
 
 % Do not change the page size or page settings.
 \begin{abstract}
@@ -117,7 +117,7 @@ In the following, we will describe our findings of how the infant should interac
 \section{Related work}
 Many products has been developed to allow parents and guardians to monitor their infants. One of them is the Georgia Tech Wearable Motherboard (GTWM)\footnote{\url{http://www.gtwm.gatech.edu/}}. Initially developed in collaboration with the US Navy Department to monitor a soldier's vital signs by detecting the penetration of e.g. bullets and shrapnel, it was later augmented to monitor an infant's breathing or heart rate by using cardiorespiratory sensors on a vinyl strap, as described by Fantauzzacoffin et al. \cite{p285-fantauzzacoffin}. The engineers had created it by weaving signal transmission lines and integrated the sensors into a onesie. One mother didn't mind her infant to be surrounded by wires from the device, and found it to be quite comfortable.
 
-Kroutil et al. \cite{a33-kroutil} used electrically conductive stranded yarn as sensors, placed underneath the lower bed sheet to detect respiration among individuals. 
+Kroutil et al. \cite{a33-kroutil} used electrically conductive stranded yarn as sensors, placed underneath the lower bed sheet to detect respiration among individuals.
 
 The sensors measured the respiratory activity by the alteration of electrical capacitance of the chest area. This was done so one could monitor patients respiration without inconveniencing them with wiring and sensors attached to their bodies.
 
@@ -126,10 +126,10 @@ Another bedsheet monitor was proposed by Huang et al. \cite{a18-huang}. Embedded
 Even though creating the sensors within the fabric of the surface the infant is lying on during sleep has produced satisfactory results \cite{a18-huang, a33-kroutil}, we have chosen another approach. Guardian Suit combines the wearability, comfort, and ease of use of GTWM\footnote{\url{http://www.gtwm.gatech.edu/}} \cite{p285-fantauzzacoffin} with the pressure sensing technologies used in the bedding solutions. We receive feedback whenever the infant is in either position i.e. prone (stomach), supine (back) or lateral (side). With the electrical elastic polymer described earlier we are able to detect the breathing rate of the baby. Finally, with constraints as proposed by Huang et al. \cite{a18-huang}, we can detect whenever any individual is in a critical state.
 
 We want to use piezoresistive conductive
-stretchable fabric for breathing detection. However, the 
+stretchable fabric for breathing detection. However, the
 research of Vogl et al. \cite{stretcheband}
 tests various stitching patterns and the resistance measured
-when stretching the stitching some amount. This could an 
+when stretching the stitching some amount. This could an
 alternative method for constructing the breathing sensor.
 
 
@@ -145,15 +145,15 @@ alternative method for constructing the breathing sensor.
     \begin{minipage}{0.925\marginparwidth}
     \textbf{Piezoresistive elastic polymer evaluation} \\
       \begin{figure} [H]
-    \includegraphics[width=1.0\textwidth]{img/breathing_sensor}
+    \includegraphics[width=1.0\textwidth]{img/resize/w200/breathing_sensor}
     \caption{Test of the piezoresistive elastic polymer using crocodile clip wires.}
 \end{figure}
       \begin{figure} [H]
-    \includegraphics[width=1.0\textwidth]{img/stretch_sensors}
+    \includegraphics[width=1.0\textwidth]{img/resize/w200/stretch_sensors}
     \caption{The different sizes of stretch sensors we tested (missing 1.0x5.0cm)}
 \end{figure}
       \begin{figure} [H]
-    \includegraphics[width=1.0\textwidth]{img/stretch_test_setup}
+    \includegraphics[width=1.0\textwidth]{img/resize/w200/stretch_test_setup}
     \caption{Test setup for the stretch sensors, results in table \ref{tab:stretch-test}}
 \end{figure}
     \end{minipage}}\label{sec:sidebar} }
@@ -169,13 +169,13 @@ From the consultation of some eTextile experts, we determined
 that tuning the sensor will be a three step approach.\\
 First, we will find the piece size of the material which
 is the most sensitive given the limited size we need it to be
-to fit on the chest. Next, we will experiment with various 
+to fit on the chest. Next, we will experiment with various
 resistors to find the best suitable one for our input range.
 Thirdly, configure the smoothing software for the sensor readings.
 
 As we need some indication of the amount the material will
-be stretched, we measured the circumference of the chest 
-when fully exhaled, fully inhaled and a regular breath 
+be stretched, we measured the circumference of the chest
+when fully exhaled, fully inhaled and a regular breath
 (this will vary depending on person).
 
 \begin{table}[H]
@@ -196,14 +196,14 @@ when fully exhaled, fully inhaled and a regular breath
   \caption{Measurements of chest circumference when breathing. Used for testing the Eeontex material.}~\label{tab:circumference}
 \end{table}
 From the above table we get an idea of how much a single breath affects the circumference
-in an adult male. Though this is not representative of a baby, due to the 
+in an adult male. Though this is not representative of a baby, due to the
 inaccessibility of one and that we want to develop a first iteration prototype, this
 will be our basis of the breath sensor.
 
 We see that the difference in a full forced inhale/exhale is around 6 cm. whereas regular
 breathing only results in around 1 cm in difference.\\
-We have experimented with the different sizes of the Eeontex conductive piezoresistive 
-stretch fabric. From the breath circumference table we can see the change varies in cm and construct a simple experiment in order to evaluate the change in resistance given 
+We have experimented with the different sizes of the Eeontex conductive piezoresistive
+stretch fabric. From the breath circumference table we can see the change varies in cm and construct a simple experiment in order to evaluate the change in resistance given
 different fabric sizes, as noted in the table below.
 
 
@@ -214,9 +214,9 @@ different fabric sizes, as noted in the table below.
     & \multicolumn{4}{l}{\small{\textbf{Stretch sensor test results}}} \\
     \cmidrule(r){1-2}
     {\small\textit{Size (cm x cm)}}
-    & {\small \textit{+0.0cm}} 
-    & {\small \textit{+0.5cm}} 
-    & {\small \textit{+1.0cm}} 
+    & {\small \textit{+0.0cm}}
+    & {\small \textit{+0.5cm}}
+    & {\small \textit{+1.0cm}}
     & {\small \textit{+1.5cm}} \\
     \midrule
     1.0x5.0    & 306-307 & 241-242 & 217-218 & 202-203\\
@@ -226,24 +226,24 @@ different fabric sizes, as noted in the table below.
     5.0x7.5    & 44-45 & 47-48 & 39-40 & 35-36 \\
     % \bottomrule
   \end{tabular}
-  \caption{Resistance measured using volt-meter in k\ohm}~\label{tab:stretch-test}
+  \caption{Resistance measured using volt-meter in k$\ohm$}~\label{tab:stretch-test}
 \end{table}
 
-We performed the test with two sets of the material sizes. 
+We performed the test with two sets of the material sizes.
 We discovered during the first test that if the material
-is stretched beyond a certain limit, the material gets 
+is stretched beyond a certain limit, the material gets
 damaged such the piezoresistive property changes. In our case,
 we found that it becomes less sensitive.
 
-From the test, we have determined the 2.5x5.0cm size 
-performed the best and therefore we will proceed with this 
+From the test, we have determined the 2.5x5.0cm size
+performed the best and therefore we will proceed with this
 configuration.
 
 \subsection{Pressure sensors}
 The position sensors will be eTextile pressure sensors by putting two conductive
 fabrics with a piezoresistive fabric in-between.\\
 For testing
-the efficiency of the sensor we started by making a 
+the efficiency of the sensor we started by making a
 simple prototype before the actual sensors.
 We used some standard copper wires, 1.4 mm, after verifying the pad with
 crocodile clip wires. When we tested this pad, the idle resistance measured when on the table was
@@ -256,31 +256,31 @@ was detected.
     \begin{minipage}{0.925\marginparwidth}
     \textbf{Pressure sensor evaluation} \\
       \begin{figure} [H]
-   \centering \includegraphics[width=0.85\textwidth]{img/pressure_sensor.jpg}
+   \centering \includegraphics[width=0.85\textwidth]{img/resize/w200/pressure_sensor.jpg}
     \caption{The prototyping of the eTextile pad.}
 \end{figure}
       \begin{figure} [H]
-   \centering \includegraphics[width=0.85\textwidth]{img/pressure_sensor2.JPG}
+   \centering \includegraphics[width=0.85\textwidth]{img/resize/w200/pressure_sensor2.JPG}
     \caption{Overview of the final pressure sensor construction (materials and assembly).}
 \end{figure}
       \begin{figure} [H]
-   \centering \includegraphics[width=0.85\textwidth]{img/pe_integration.JPG}
+   \centering \includegraphics[width=0.85\textwidth]{img/resize/w200/pe_integration.JPG}
     \caption{Pressure sensor sewn into the onesie.}
 \end{figure}
-    \end{minipage}}\label{sec:sidebar3} } 
+    \end{minipage}}\label{sec:sidebar3} }
 %\end{comment}
 
-After verifying that the pressure sensor can be used as 
+After verifying that the pressure sensor can be used as
 intended. We manufactured with as much precision as possible
-the actual sensors which will be used in the prototype. 
+the actual sensors which will be used in the prototype.
 
 Instead of cobber wires, we will use silver plated nylon
 with which has high conductivity. When tested we experienced
 the same behaviour as when using cobber wiring.
 
-As before all the conductive fabrics (non stretch) were 
+As before all the conductive fabrics (non stretch) were
 burned around the edges to keep the fabric from fraying.
-For wrapping and keeping in place, we used a thin cotton 
+For wrapping and keeping in place, we used a thin cotton
 fabric which is non-conductive and kept together by
 fabric glue.
 For connectors we use the silver plated nylon fabric to make a stripe around
@@ -312,7 +312,7 @@ connectors.
 
 
 
-\balance{} 
+\balance{}
 
 \bibliographystyle{SIGCHI-Reference-Format}
 \bibliography{sample}
