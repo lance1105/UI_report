@@ -105,11 +105,12 @@ Parents and guardians of infants are often worried about their health. Because o
     \begin{minipage}{0.925\marginparwidth}
     \textbf{Guardian Suit} \\
       \begin{figure} [H]
-    \includegraphics[width=1.0\textwidth]{img/resize/w200/prototype_overview}
+    \includegraphics[width=1.5\textwidth,angle=-90]{img/resize/w200/prototype_overview}
+    \centering
     \caption{Guardian Suit (onesie - no breath sensor as we need it seperately to test it)}
 \end{figure}
       \begin{figure} [H]
-    \includegraphics[width=1.0\textwidth]{img/resize/w200/breath_sensor}
+    \includegraphics[width=1.0\textwidth]{img/resize/w200/stretch_test_setup}
     \caption{The breath sensor, mounted on a strip of cotton fabric for testing}
 \end{figure}
     \end{minipage}}\label{sec:sidebar} }
@@ -275,7 +276,7 @@ different fabric sizes, as noted in the table below.
     5.0x7.5    & 44-45 & 47-48 & 39-40 & 35-36 \\
     % \bottomrule
   \end{tabular}
-  \caption{Resistance measured using volt-meter in k$\ohm$}~\label{tab:stretch-test}
+  \caption{Resistance measured using volt-meter in k$\Omega$}~\label{tab:stretch-test}
 \end{table}
 We performed the test with two sets of the material sizes.
 We discovered during the first test that if the material
@@ -333,7 +334,7 @@ For wrapping and keeping in place, we used a thin cotton
 fabric which is non-conductive and kept together using
 fabric glue.
 For connectors we use the silver plated nylon fabric to make a stripe around
-the stomach area for the ground connector \todo{5v istedet antager jeg? (Mark J.)} which all pads will be connected to.
+the stomach area for the main connector which all pads will be connected to.
 
 For the wiring of each of the analog input to each pad, we used conductive
 thread. In our prototype the thread leads out of the onesie by a line of
@@ -348,7 +349,7 @@ weigh (sampled using 5 coins) 9.3g each. Therefore we can treat each of them as
 being the same weight.
 \begin{figure} [H]
    \centering \includegraphics[width=0.45\textwidth]{img/chart.PNG}
-    \caption{Resistance change by weight (m$\ohm$)}
+    \caption{Resistance change by weight (k$\Omega$)}
 \end{figure}
 From the chart we can see that around 100g of force will drop the resistance
 by around 90\%. From these results we determined that the sensors would be suitable
@@ -372,6 +373,11 @@ micron-thick layer of natural silver. We also evaluated these against copper
 wiring in the pressure sensor evaluation section. The issue with these
 connectors is that because they are plated with silver, washing prototype
 would over time reduce the conductivity of the material.
+
+The prototype itself consists of the 4 pressure sensors, and one breath sensor. 
+An Arduino MKR1000 micro controller reads the resistance of the sensors and transmits the raw values over an USB connection to a computer. The computer then represents the raw sensor data as graphs.
+
+
 
 \colorbox{cyan}{A little about how our Arduino-setup works with plots (Mark J.)}.
 \colorbox{cyan}{like... en 2-3 paragrapher)}.
