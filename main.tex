@@ -14,11 +14,10 @@
 \usepackage{pgfgantt-custom}
 \usepackage{verbatim}
 \usepackage{gensymb} % for ohm-symbol
-
 \usepackage{todonotes}
 
 % For gifs?
-%\usepackage{animate}
+\usepackage{animate}
 
 % \usepackage{marginnote} \usepackage[shortlabels]{enumitem}
 % \usepackage{paralist}
@@ -79,7 +78,7 @@
 % \reversemarginpar%
 
 \begin{document}
-
+\pagenumbering{arabic}
 \maketitle
 
 % Uncomment to disable hyphenation (not recommended)
@@ -107,16 +106,16 @@ Parents and guardians of infants are often worried about their health. Because o
       \begin{figure} [H]
     \includegraphics[width=1.5\textwidth,angle=-90]{img/resize/w200/prototype_overview}
     \centering
-    \caption{Guardian Suit (onesie - no breath sensor as we need it seperately to test it)}
+    \caption{The Guardian Suit (onesie - no breathing sensor as we need it separately to test it).}
 \end{figure}
       \begin{figure} [H]
     \includegraphics[width=1.0\textwidth]{img/resize/w200/stretch_test_setup}
-    \caption{The breath sensor, mounted on a strip of cotton fabric for testing}
+    \caption{The breathing sensor, mounted on a strip of cotton fabric for testing.}
 \end{figure}
     \end{minipage}}\label{sec:sidebar} }
 %\end{comment}
 
-Many recommendations for the infants sleeping positions and environments has been made in order to lower the probability of Sudden Infant Death Syndrome (SIDS)\footnote{\url{https://en.wikipedia.org/wiki/Sudden_infant_death_syndrome}}. After years of research by the American Academy of Pediatrics (AAP) \cite{aap-1992,aap-1996,aap-2005} the main recommendations for minimizing the probability of SIDS is to detect:
+Many recommendations for the infants sleeping positions and environments have been made in order to lower the probability of Sudden Infant Death Syndrome (SIDS)\footnote{\url{https://en.wikipedia.org/wiki/Sudden_infant_death_syndrome}}. After years of research by the American Academy of Pediatrics (AAP) \cite{aap-1992,aap-1996,aap-2005} the main recommendations for minimizing the probability of SIDS is to detect:
 \begin{itemize}
   \item Whether the infant is breathing or not.
   \item When the infant changes position.
@@ -126,7 +125,7 @@ To address these points we developed Guardian Suit, a onesie with one-dimensiona
 The first sensor introduced (1) consists of a piezoresistive elastic polymer
 which decrease in resistance when stretched. This allows for detecting whether
 the infant is breathing or not.\\
-The sensors for the sides, stomach and back (2,3,4) consists of a piece of
+The sensors for the sides, stomach and back (2, 3, 4) consists of a piece of
 piezoresistive fabric in-between two pieces of conductive fabrics. 
 They decrease in resistance when pressure is applied to them. 
 These sensors are placed as such, in order to detect whether the infant is in a
@@ -134,7 +133,7 @@ prone (i.e. on the stomach), supine (i.e. on the back) or lateral (i.e. on the
 side) position.
 
 
-% Ville skulle forklare noget om isolering af de ledende stoffer, men vi kan også bare fjerne det
+% Ville forklare noget om isolering af de ledende stoffer, men vi kan også bare fjerne det
 \begin{comment}
 Furthermore, as our product is electrical, we don't want the possibility of
 hurting the baby e.g. by getting electrocuted. For this, we created strips out
@@ -149,44 +148,70 @@ mimic some properties of a baby, e.g. weight and shape. We put the Guardian Suit
 on the doll and moved it into various positions. We found that the pressure pads
 worked very well in detecting the positioning of the doll. As for the breathing
 sensor, we tested it on ourselves as we did not have access to a baby. Though
-it were able to detect breathing, the very subtle stretch in the piezoresistive
+it was able to detect breathing, the very subtle stretch in the piezoresistive
 elastic polymer is hard to detect and body movement would overshadow any output
 from breathing. However, it still was possible to produce a curve from which 
 we are able to identify breaths.\todo{results?}
 
-% Måske bare fjerne og så fortsætte?
+% Ved ikke rigtigt hvordan det skal formuleres alligevel
+In the following, we will describe how we constructed
+the breathing and pressure sensors, how we evaluated
+these and how they will be integrated into Guardian Suit.\\
+We also provide some material evaluation of the Eeontex
+peizoresistive stretch fabric regarding the resistance
+change when stretched.
+
+% CONTRIBUTIONS:
+% 1. material evaluation of Eeontex stretch fabric
+% 2. prototype: Guardian Suit (breathing sensor and pressure sensor onesie)
 \begin{comment}
-In the following, we will describe our findings of how the infant should interact with the apparatus. Thus, we had to build it with the following in mind: (1) sensor construction and placement techniques, (2) connecting the sensors to the development board without the use of wires, and (3) usage scenarios and possible feedback from the readings.
+In the following, we will describe our findings of how the 
+prototype should be used. Thus, we had to build it with the following in mind: (1) sensor construction and placement techniques, (2) connecting the sensors to the development board without the use of wires, and (3) usage scenarios and possible feedback from the readings.
 \end{comment}
 
 
 \section{Guardian Suit}
+% first paragraph should be rephrased
+% for the final submission
+Guardian Suit consists of three key components which
+makes up the prototype. The breathing sensor which is
+made from Eeontex piezoresistive elastic fabric, conductive
+nylon and conductive thread. Pressure sensors made
+from conductive fabric, Eeontex piezoresistive (non-elastic)
+fabric, conductive nylon and conductive thread. Software
+processing of the output data from the sensors.
+
+The components are embedded into a regular cotton baby
+onesie. Guardian Suit will thereby monitor the baby
+directly, oppose to our conventional baby monitors which 
+focuses more on the baby's environment with sound and video.
+
+% comment for at kunne fjerne fra dokument
+\begin{comment}
 \colorbox{cyan}{Modified universal onesie bought from a generic baby clothing store}
-\colorbox{cyan}{Argumantation for for why this is a
+\colorbox{cyan}{Arguments for why this is a
 better approach: Affordable, non-intrusive?}
 \colorbox{cyan}{Picture overview}
 \colorbox{cyan}{key components}
+\end{comment}
 
 \section{Motivational scenario}
-The parents of an infant realizes that it is dozing off, and decides to put the infant in a crib for a nap, where the infant is dressed with the Guardian Suit beforehand. The infant is initially placed on its back in the crib, and the parents goes about with their work. Whenever the infant changes position, either to one of the sides or on the stomach, the parents are notified by the pressure pads embedded in the suit in order to take action. The same with the breathing sensor, when the infant isn't breathing \colorbox{cyan}{25-40} consecutive breaths per minute, the parents are notified, and thus, can take immediate action.
+The parents of an infant realizes that it is dozing off, and decides to put the infant in a crib for a nap, where the infant is dressed with the Guardian Suit beforehand. The infant is initially placed on its back in the crib, and the parents goes about with their work. Whenever the infant changes position, either to one of the sides or on the stomach, the parents are notified by the pressure pads embedded in the suit in order to take action. The same with the breathing sensor, when the infant isn't breathing 20-44 consecutive breaths per minute \cite{a18-huang}, the parents are notified, and thus, can take immediate action.
 
 \section{Related work}
-Many products has been developed to allow parents and guardians to monitor their infants. One of them is the Georgia Tech Wearable Motherboard (GTWM)\footnote{\url{http://www.gtwm.gatech.edu/}}. Initially developed in collaboration with the US Navy Department to monitor a soldier's vital signs by detecting the penetration of e.g. bullets and shrapnel, it was later augmented to monitor an infant's breathing or heart rate by using cardiorespiratory sensors on a vinyl strap, as described by Fantauzzacoffin et al. \cite{p285-fantauzzacoffin}. The engineers had created it by weaving signal transmission lines and integrated the sensors into a onesie. One mother didn't mind her infant to be surrounded by wires from the device, and found it to be quite comfortable.
+Many products have been developed to allow parents and guardians to monitor their infants. One of them is the Georgia Tech Wearable Motherboard (GTWM)\footnote{\url{http://www.gtwm.gatech.edu/}}. Initially developed in collaboration with the US Navy Department to monitor a soldier's vital signs by detecting the penetration of e.g. bullets and shrapnel, it was later augmented to monitor an infant's breathing or heart rate by using cardiorespiratory sensors on a vinyl strap, as described by Fantauzzacoffin et al. \cite{p285-fantauzzacoffin}. The engineers had created it by weaving signal transmission lines and integrated the sensors into a onesie. One mother didn't mind her infant to be surrounded by wires from the device, and found it to be quite comfortable.
 
-Kroutil et al. \cite{a33-kroutil} used electrically conductive stranded yarn as sensors, placed underneath the lower bed sheet to detect respiration among individuals.
-
-The sensors measured the respiratory activity by the alteration of electrical capacitance of the chest area. This was done so one could monitor patients respiration without inconveniencing them with wiring and sensors attached to their bodies.
+Kroutil et al. \cite{a33-kroutil} used electrically conductive stranded yarn as sensors, placed underneath the lower bed sheet to detect respiration among individuals. The sensors measured the respiratory activity by the alteration of electrical capacitance of the chest area. This was done so one could monitor patients respiration without inconveniencing them with wiring and sensors attached to their bodies.
 
 Another bedsheet monitor was proposed by Huang et al. \cite{a18-huang}. Embedded with pressure sensors and in conjunction with collated data, they were able to detect whether the person was breathing or not within a certain time interval, corresponding to a predetermined minimum breathing rate.
 
-Even though creating the sensors within the fabric of the surface the infant is lying on during sleep has produced satisfactory results \cite{a18-huang, a33-kroutil}, we have chosen another approach. Guardian Suit combines the wearability, comfort, and ease of use of GTWM\footnote{\url{http://www.gtwm.gatech.edu/}} \cite{p285-fantauzzacoffin} with the pressure sensing technologies used in the bedding solutions. We receive feedback whenever the infant is in either position i.e. prone (stomach), supine (back) or lateral (side). With the electrical elastic polymer described earlier we are able to detect the breathing rate of the baby. Finally, with constraints as proposed by Huang et al. \cite{a18-huang}, we can detect whenever any individual is in a critical state.
+Even though creating the sensors within the fabric of the surface the infant is lying on during sleep has produced satisfactory results \cite{a18-huang, a33-kroutil}, we have chosen another approach. Guardian Suit combines the wearability, comfort, and ease of use of GTWM\footnote{\url{http://www.gtwm.gatech.edu/}} \cite{p285-fantauzzacoffin} with the pressure sensing technologies used in the bedding solutions. We receive feedback whenever the infant is in either position i.e. prone (stomach), supine (back) or lateral (side). With the electrical elastic polymer we are able to detect the breathing rate of the baby. Finally, with constraints as proposed by Huang et al. \cite{a18-huang}, we can detect whenever any individual is in a critical state.
 
 We are using piezoresistive conductive
-stretchable fabric for breathing detection. However, an alternate solution method to the breathing sensor
+stretchable fabric for breathing detection. However, an alternative solution method to the breathing sensor
 could be investigated based on the research of Vogl et al. \cite{stretcheband}, who
 test various stitching patterns of conductive thread and the resistance measured
 when stretched.
-
 
 \clearpage
 
@@ -284,7 +309,7 @@ is stretched beyond a certain limit, the material gets
 damaged such the piezoresistive property changes. In our case,
 we found that it becomes less sensitive.
 
-From the test, we have determined the 2.5x5.0cm size
+From the experimentation, we have determined the 2.5x5.0cm size
 performed the best and therefore we will proceed with this
 configuration.
 
@@ -357,7 +382,7 @@ as a newborn weighs on average 3.5kg.
 
 \clearpage
 
-\section{Prototype construction (Mark + Mark)}
+\section{Prototype construction}
 What separates Guardian Suit from conventional alternative baby monitors 
 (e.g. cameras and noise sensors) is its relative low cost and monitors the
 baby directly and not the environment around it. The 
@@ -377,38 +402,111 @@ would over time reduce the conductivity of the material.
 The prototype itself consists of the 4 pressure sensors, and one breath sensor. 
 An Arduino MKR1000 micro controller reads the resistance of the sensors and transmits the raw values over an USB connection to a computer. The computer then represents the raw sensor data as graphs.
 
+The Arduino micro controller is hooked up to a pull-up resistance circuit, as shown on \autoref{fig:ardcirc}. The pull-up circuit makes the voltage change on the terminals \textbf{A0} to \textbf{A4}, when the sensors resistance change. 
+The micro controller compares the input voltage on the terminals to the reference voltage defined in the system. The reference voltage is set externally by potentiometer as illustrated on the circuit diagram (\textbf{Aref}). This gives us granular control of the sensor readings. This is help full for illustrating small fluctuations in the voltage. The breathing sensor has a very low actuation distance, and therefore low fluctuations. Changing the reference voltage will therefore make it easier to detect changes.  
+\colorbox{cyan}{Add to conclusion?}.
 
+\begin{figure} [H]
+   \centering \includegraphics[width=0.45\textwidth]{img/arduino_diagram}
+    \caption{Circuit diagram of the sensor setup}
+    \label{fig:ardcirc}
+\end{figure}
+
+The micro controller applies a low pass filter before sending the data to the computer. The low pass filter is based on the last $n$ values read, where each values gets repaced after $n$ iterations. $B$ is the buffer(last values read), and $D$ is the current readings. $k$ is the current iteration.
+$$
+V_k= \sum\limits_{i=1}^n 
+\left\{
+\begin{array}{ll}
+    k \bmod n = i & B_k = D_k\\
+    else          & B_k
+\end{array}\right\}\frac{1}{n}
+$$
+This illustrates that the average is taken over the $n$ iterations, and once per iteration a buffer value is changed, "round robin" style.
+
+
+\colorbox{cyan}{Add image see comments}.
+%
+% Add image of the graphing program running
+%
+%\begin{figure} [H]
+%   \centering \includegraphics[width=0.45\textwidth]{img/arduino_diagram}
+%    \caption{Circuit diagram of the sensor setup}
+%\end{figure}
+
+When the sensor data has been processed, the data is ready to be sent to the computer. A python program reads the data, and represents it on the screen.
+The first column contains the individual sensor data. The graph is time based, where the range is set to the highest and lowest observed value, taken from a timespan of 5 seconds.
+The bottom column contains the same timespan, but shows all the sensor values at once, with a fixed range from $0$ to $1023$. 
 
 \colorbox{cyan}{A little about how our Arduino-setup works with plots (Mark J.)}.
 \colorbox{cyan}{like... en 2-3 paragrapher)}.
 
 
-\section{Prototype evaluation (ALL on Tuesday)}
-\colorbox{cyan}{breathing sensor on mark}.\\
-\colorbox{cyan}{move doll around}.
+\section{Prototype evaluation}
+Without using an actual baby for testing, we created a
+doll consisting of rice and flour to represent an
+approximation of a baby's weight and size. The amount we 
+can test using this doll is limited, however, we are able 
+to conduct a very technical evaluation of the pressure 
+would work in general.
 
-\section{Future work (All on tuesday - Mark W. udkast)}
+We put Guardian Suit on the doll and placed it in various
+positions to verify the actuation of the pressure sensors.
+As observed like in the technical evaluation of the sensors,
+the pressure of the doll's around 3kg of distributed weight
+is able to actuate the sensors clearly when lying on one. 
+Some of the sensors did show slight actuation due to the
+bending of the sensor because of the doll's shape. However,
+it was clear to see when the doll was lying on one as the 
+resistance decreased much more.\\
+\colorbox{cyan}{illustative images OR GIF missing...}.
+
+For the breathing sensor we sew the breathing sensor into
+a long strip of cotton fabric to be able to adjust the 
+sensor around an adult. We tried the sensor on an 
+adult male in order to verify the ability to identify 
+breaths.\\
+Generally as mentioned earlier, breaths are very subtle and
+overshadowed by muscle flex. However, when completely still,
+the sensor is able to detect breaths.\\
+\colorbox{cyan}{illustative images OR GIF missing...}.
+
+\section{Future work}
 We used piezoresistive elastic polymer for our breathing sensor. Using this,
-we were able to detect breathing but with very limited signal. Also, muscle flex
+we were able to detect breathing but with very limited signal. Also, flexing the muscles
 would produce much more prominent signals. We don't expect this to be any
 different given any other materials or stretch sensors. However,
 based on the research of Vogl et al. \cite{stretcheband} it would be interesting
-to see what signal is produced when making the same kind of stitch pattern on
+to see which signal is produced when making the same kind of stitch pattern on
 the test area and evaluate the signal output.
 
-The Guardian Suit works in theory by the test on the doll in the study. However,
+The Guardian Suit works by the test on the doll in the study. However,
 the prototype has yet to be evaluated on an actual baby which would provide the
 most accurate real world usage as the product is intended for babies. However,
 another place to start would be to build it into an adult size piece of clothing
 and try it on an adult.
 
-Generally, the prototype can be further developed in multiple ways. Most imediately would be to 
+Generally, the prototype can be further developed in multiple ways. One would be to 
 find a micro-controller to be embedded into the onesie. Also, given the connectors currently are just
 sewn into the onesie, finding a way to insulate them would be something to consider in a future
 iteration of the prototype.
 
-\section{Conclusion (All on tuesday)}
-\colorbox{cyan}{The paper is concluded}.
+\section{Conclusion and discussion}
+\colorbox{cyan}{The sensors work - breathing sensor very sensitive}.
+
+\colorbox{cyan}{Further development could possibly make a 
+viable product}.
+
+
+\begin{tabular}{cc}
+     \animategraphics[loop,autoplay,width=0.7\linewidth]{12}{test/wave-}{0}{5} \\  
+    CUTE ANIME WAVE
+\end{tabular}
+
+\colorbox{cyan}{omg animated pictures!} \\
+\colorbox{cyan}{want to use for breathing sensor and 
+perhaps position sensors.}
+
+
 
 
 
