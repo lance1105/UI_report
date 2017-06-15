@@ -1,0 +1,16 @@
+Rapport:
+-(v) Introduktion skal rettes.
+-(v) Generel gennemlæsning for konsistens(Ligesom introen).
+-(v) Evaluering:
+  - Kvantificerbar evaluering.
+  - (v) Test ~20 gange de rå sensor værdier for vær position, og tag average(95 percentile variance).
+  - (v) Graf der illustrerer de forskællige ligge retninger.
+  - Til vejrtrækning: Lav graf der viser sensorværdierne.
+  
+- Tage nye billeder:
+
+
+
+- relation to baby. skift til relativ baby omkreds.
+
+- force calculation of the surface of the baby

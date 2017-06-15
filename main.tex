@@ -95,12 +95,13 @@
 \category{J.3}{Health and Medical systems}{Medical information systems}
 % See http://www.acm.org/about/class/ccs98-html for all (men denne er den eneste som passer til os)
 
-\section{Introduction}
-Parents and guardians of infants are often worried about their health. Because of this, various baby monitoring technologies have been developed. These monitoring devices checks the sleeping environment for the baby (e.g. critical shifts in the temperature of the room) and alarms the parent or guardian. A majority of these products have an object present near the infant's crib, which we find to be rather clunky and can be misleading (i.e. false positives). Unfortunately, they do not give any information of which position the baby is lying in and whether it is breathing or not.
+\section{Introduction\todo{Hele sektion har problemer med formulering, skal gennemlæses og skrives til (Kasper)}}
+Parents and guardians are often worried about the infants health. Because of this, various infant monitoring technologies have been developed. These monitoring devices checks the sleeping environment for the infant (e.g. critical shifts in the temperature of the room), and usually requires an object being present near the infant's crib, which we find to be rather clunky. Unfortunately, they do not give any information on which position the infant is lying in and whether it is breathing or not.
 
+Many recommendations for the infants sleeping positions and environments have been made in order to lower the probability of Sudden Infant Death Syndrome (SIDS)\footnote{\url{https://en.wikipedia.org/wiki/Sudden_infant_death_syndrome}}.
 %\begin{comment}
 \marginpar{%
-  \vspace{-10pt} \fbox{%
+  \vspace{-20pt} \fbox{%
     \begin{minipage}{0.925\marginparwidth}
     \textbf{Guardian Suit} \\
       \begin{figure} [H]
@@ -109,29 +110,19 @@ Parents and guardians of infants are often worried about their health. Because o
     \caption{The Guardian Suit (onesie - no breathing sensor as we need it separately to test it).}
 \end{figure}
       \begin{figure} [H]
-    \includegraphics[width=1.0\textwidth]{img/resize/w200/stretch_test_setup}
+    \includegraphics[width=1.0\textwidth]{img/breathing_sensor_final}
     \caption{The breathing sensor, mounted on a strip of cotton fabric for testing.}
 \end{figure}
     \end{minipage}}\label{sec:sidebar} }
 %\end{comment}
+After years of research by the American Academy of Pediatrics (AAP) \cite{aap-1992,aap-1996,aap-2005} the main recommendations for minimizing the probability of SIDS is to detect (1) whether the infant is breathing or not, and (2) when the infant changes position. To address the recommendations we developed Guardian Suit, a onesie with one-dimensional textile sensors sewn (3) around the chest area, (4) on the lower-back, (5) stomach, and (6) one on each side.
 
-Many recommendations for the infants sleeping positions and environments have been made in order to lower the probability of Sudden Infant Death Syndrome (SIDS)\footnote{\url{https://en.wikipedia.org/wiki/Sudden_infant_death_syndrome}}. After years of research by the American Academy of Pediatrics (AAP) \cite{aap-1992,aap-1996,aap-2005} the main recommendations for minimizing the probability of SIDS is to detect:
-\begin{itemize}
-  \item Whether the infant is breathing or not.
-  \item When the infant changes position.
-\end{itemize}
-To address these points we developed Guardian Suit, a onesie with one-dimensional textile sensors sewn into it as such: (1) around the chest area, (2) on the lower-back, (3) stomach, and (4) one on each side.
-
-The first sensor introduced (1) consists of a piezoresistive elastic polymer
-which decrease in resistance when stretched. This allows for detecting whether
-the infant is breathing or not.\\
-The sensors for the sides, stomach and back (2, 3, 4) consists of a piece of
-piezoresistive fabric in-between two pieces of conductive fabrics. 
-They decrease in resistance when pressure is applied to them. 
+The first sensor introduced (3) consists of piezoresistive elastic polymer, conductive
+nylon and conductive thread which decrease in resistance when stretched. This allows for detecting whether
+the infant is breathing or not. The sensors for the back, stomach and sides (4, 5, 6) consist of pieces of conductive nylon, conductive thread, and non-elastic piezoresistive fabric in-between two pieces of conductive fabrics. They decrease in resistance when pressure is applied to them. 
 These sensors are placed as such, in order to detect whether the infant is in a
 prone (i.e. on the stomach), supine (i.e. on the back) or lateral (i.e. on the
 side) position.
-
 
 % Ville forklare noget om isolering af de ledende stoffer, men vi kan også bare fjerne det
 \begin{comment}
@@ -144,7 +135,7 @@ snaps\footnote{\url{https://www.sparkfun.com/products/11347}}.
 \end{comment}
 
 To test this crude first generation prototype, we manufactured a doll which 
-mimic some properties of a baby, e.g. weight and shape. We put the Guardian Suit
+mimic some properties of a baby, i.e. weight and shape. We put the Guardian Suit
 on the doll and moved it into various positions. We found that the pressure pads
 worked very well in detecting the positioning of the doll. As for the breathing
 sensor, we tested it on ourselves as we did not have access to a baby. Though
@@ -169,7 +160,8 @@ In the following, we will describe our findings of how the
 prototype should be used. Thus, we had to build it with the following in mind: (1) sensor construction and placement techniques, (2) connecting the sensors to the development board without the use of wires, and (3) usage scenarios and possible feedback from the readings.
 \end{comment}
 
-
+\begin{comment}
+% Fjernet fordi Kasper føler det er fortalt i introduktionen (som skal rettes til)
 \section{Guardian Suit}
 % first paragraph should be rephrased
 % for the final submission
@@ -185,6 +177,7 @@ The components are embedded into a regular cotton baby
 onesie. Guardian Suit will thereby monitor the baby
 directly, oppose to our conventional baby monitors which 
 focuses more on the baby's environment with sound and video.
+\end{comment}
 
 % comment for at kunne fjerne fra dokument
 \begin{comment}
@@ -257,17 +250,18 @@ when fully exhaled, fully inhaled and a regular breath
 (this will vary depending on person).
 \begin{table}[H]
   \centering
-  \begin{tabular}{l r}
+  \begin{tabular}{l r r}
     % \toprule
-    & \multicolumn{1}{l}{\small{\textbf{Breath circumference measure}}} \\
-    \cmidrule(r){1-2}
+    & \multicolumn{1}{r}{\small{\textbf{Breath circumference measure}}} \\
+    \cmidrule(r){2-3}
     {\small\textit{State}}
-    & {\small \textit{circumference (cm)}} \\
+    & {\small \textit{circumference (cm)}}
+    & {\small \textit{Change (cm)}}\\
     \midrule
-    Full exhale    & 101.0 \\
-    Full inhale    & 107.0 \\
-    Regular exhale & 104.2 \\
-    Regular inhale & 105.5  \\
+    Full exhale    & 101.0 & \\
+    Full inhale    & 107.0 & 6\\
+    Regular exhale & 104.2 & \\
+    Regular inhale & 105.5 & 1.3 \\
     % \bottomrule
   \end{tabular}
   \caption{Measurements of chest circumference when breathing. Used for testing the Eeontex material.}~\label{tab:circumference}
@@ -277,7 +271,7 @@ in an adult male. Though this is not representative of a baby, due to the
 inaccessibility of one and that we want to develop a first iteration prototype, this
 will be our basis of the breathing sensor.
 
-We see that the difference in a full forced inhale/exhale is around 6 cm. whereas regular
+We see that the difference in a full forced inhale/exhale is about 6 cm. whereas regular
 breathing only results in around 1 cm in difference.\\
 We have experimented with the different sizes of the Eeontex conductive piezoresistive
 stretch fabric. From the breath circumference table we can see the change varies in cm and construct a simple experiment in order to evaluate the change in resistance given
@@ -294,11 +288,11 @@ different fabric sizes, as noted in the table below.
     & {\small \textit{+1.0cm}}
     & {\small \textit{+1.5cm}} \\
     \midrule
-    1.0x5.0    & 306-307 & 241-242 & 217-218 & 202-203\\
-    2.5x5.0    & 101-102 & 78-77 & 63-64 & 58-59 \\
-    2.5x7.5    & 122-123 & 108-109 & 89-90 & 83-84 \\
-    5.0x5.0    & 63-64 & 53-54 & 39-40 & 37-38 \\
-    5.0x7.5    & 44-45 & 47-48 & 39-40 & 35-36 \\
+    1.0x5.0    & 306 & 241(~79\%) & 217(~71\%) & 202(~66\%)\\
+    2.5x5.0    & 101 & 78(~77\%)  & 63(~62\%)  & 58(~57\%) \\
+    2.5x7.5    & 122 & 108(~89\%) & 89(~73\%)  & 83(~68\%) \\
+    5.0x5.0    & 63  & 53(~81\%)  & 39(~62\%)  & 37(~59\%) \\
+    5.0x7.5    & 44  & 47(~107\%)  & 39(~89\%)  & 35(~80\%) \\
     % \bottomrule
   \end{tabular}
   \caption{Resistance measured using volt-meter in k$\Omega$}~\label{tab:stretch-test}
@@ -399,11 +393,11 @@ wiring in the pressure sensor evaluation section. The issue with these
 connectors is that because they are plated with silver, washing prototype
 would over time reduce the conductivity of the material.
 
-The prototype itself consists of the 4 pressure sensors, and one breath sensor. 
+The prototype itself consists of the 4 pressure sensors, and one breathing sensor. 
 An Arduino MKR1000 micro controller reads the resistance of the sensors and transmits the raw values over an USB connection to a computer. The computer then represents the raw sensor data as graphs.
 
 The Arduino micro controller is hooked up to a pull-up resistance circuit, as shown on \autoref{fig:ardcirc}. The pull-up circuit makes the voltage change on the terminals \textbf{A0} to \textbf{A4}, when the sensors resistance change. 
-The micro controller compares the input voltage on the terminals to the reference voltage defined in the system. The reference voltage is set externally by potentiometer as illustrated on the circuit diagram (\textbf{Aref}). This gives us granular control of the sensor readings. This is help full for illustrating small fluctuations in the voltage. The breathing sensor has a very low actuation distance, and therefore low fluctuations. Changing the reference voltage will therefore make it easier to detect changes.  
+The micro controller compares the input voltage on the terminals to the reference voltage defined in the system. The reference voltage is set externally by potentiometer as illustrated on the circuit diagram (\textbf{Aref}). This gives us granular control of the sensor readings. This is helpful for illustrating small fluctuations in the voltage. The breathing sensor has a very low actuation distance, and therefore low fluctuations. Changing the reference voltage will therefore make it easier to detect changes.  
 \colorbox{cyan}{Add to conclusion?}.
 
 \begin{figure} [H]
@@ -412,7 +406,7 @@ The micro controller compares the input voltage on the terminals to the referenc
     \label{fig:ardcirc}
 \end{figure}
 
-The micro controller applies a low pass filter before sending the data to the computer. The low pass filter is based on the last $n$ values read, where each values gets repaced after $n$ iterations. $B$ is the buffer(last values read), and $D$ is the current readings. $k$ is the current iteration.
+The micro controller applies a low pass filter before sending the data to the computer. The low pass filter is based on the last $n$ values read, where each values gets replaced after $n$ iterations. $B$ is the buffer(last values read), and $D$ is the current readings. $k$ is the current iteration.
 $$
 V_k= \sum\limits_{i=1}^n 
 \left\{
@@ -435,10 +429,7 @@ This illustrates that the average is taken over the $n$ iterations, and once per
 
 When the sensor data has been processed, the data is ready to be sent to the computer. A python program reads the data, and represents it on the screen.
 The first column contains the individual sensor data. The graph is time based, where the range is set to the highest and lowest observed value, taken from a timespan of 5 seconds.
-The bottom column contains the same timespan, but shows all the sensor values at once, with a fixed range from $0$ to $1023$. 
-
-\colorbox{cyan}{A little about how our Arduino-setup works with plots (Mark J.)}.
-\colorbox{cyan}{like... en 2-3 paragrapher)}.
+The bottom column contains the same timespan, but shows all the sensor values at once, with a fixed range from $0$ to $1023$.
 
 
 \section{Prototype evaluation}
