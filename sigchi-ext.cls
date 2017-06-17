@@ -284,7 +284,8 @@
     \vfil
     
     % ... and ACM copyright
-    \rule{\columnwidth}{0.5pt}
+    % OUTCOMMENTED TO REMOVE THE LINE BETWEEN COPYRIGHT AND AUTHORS (Mark W.)
+    %\rule{\columnwidth}{0.5pt}
     {\scriptsize\@copyrightinfo \\}
   \end{minipage}
 

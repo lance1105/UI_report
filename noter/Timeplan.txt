@@ -1,0 +1,23 @@
+
+MJ = Mark Jacobi
+MW = Mark Wulff
+MT = Madrigal Totayo
+
+
+- (MT) Video preview skal laves om
+- (Alle) Generel gennemlæsning for fejl
+- (MJ) Prototype evaluering 
+  - (MJ) Pressure sensor tests 
+  - (MW) Breathing sensor 
+- (MJ) Tilføj billeder af testprogram under prototype construction 
+- (Alle) lav presentation
+
+- Abstract #1
+- Conclusion #2
+
+
+
+
+
+())====>~
+
