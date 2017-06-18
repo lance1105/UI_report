@@ -419,19 +419,17 @@ V_k= \sum\limits_{i=1}^n
 $$
 This illustrates that the average is taken over the $n$ iterations, and once per iteration a buffer value is changed, "round robin" style.
 
-
-\colorbox{cyan}{Add image see comments}.
-%
-% Add image of the graphing program running
-%
-%\begin{figure} [H]
-%   \centering \includegraphics[width=0.45\textwidth]{img/arduino_diagram}
-%    \caption{Circuit diagram of the sensor setup}
-%\end{figure}
-
-When the sensor data has been processed, the data is ready to be sent to the computer. A python program reads the data, and represents it on the screen.
+When the sensor data has been processed, the data is ready to be sent to the computer. A python program reads the data, and represents it on the screen(\autoref{fig:pyprogram}).
 The first column contains the individual sensor data. The graph is time based, where the range is set to the highest and lowest observed value, taken from a timespan of 5 seconds.
 The bottom column contains the same timespan, but shows all the sensor values at once, with a fixed range from $0$ to $1023$.
+
+\begin{figure}
+   \centering \includegraphics[width=0.45\textwidth]{img/all_sensors}
+    \caption{Data illustrated on computer via python}
+    \label{fig:pyprogram}
+\end{figure}
+
+
 
 
 \section{Prototype evaluation}
@@ -463,7 +461,21 @@ is able to actuate the sensors clearly when lying on one.
 Some of the sensors did show slight actuation due to the
 bending of the sensor because of the doll's shape. However,
 it was clear to see when the doll was lying on one as the 
-resistance decreased much more.\todo{Mark J. Write thing about pressure sensor testing here - beautiful diagrams}
+resistance decreased much more.
+
+To test this, we moved and dropped the baby 25 times on each sensor, 
+to test for variations between each observations. In \autoref{fig:testsensorsgraph}
+The range of observations are plotted, where start and end of the lines are the lowest and highest value observed for that particular sensor.
+The curve is the probability density function for that sensor observation. The four different graphs are the four different test scenarios. 
+When the prototype is on the backside, we observe that the back(or bottom) sensor shows higher values as seen on the top left plot. All the other
+sensors have lower values. The red bar illustrates a overlap between sensor data. Green illustrates that no overlap happened doing the test. 
+
+It is clear that the overlap is very small, and the possibility for a false positive is lower than $\sim1\%$ in the worst case.
+\begin{figure}
+   \centering \includegraphics[width=0.45\textwidth]{img/sensor_test}
+    \caption{Data illustrated on computer via python}
+    \label{fig:testsensorsgraph}
+\end{figure}
 
 For the breathing sensor we sew the breathing sensor into
 a long strip of cotton fabric to be able to adjust the 
