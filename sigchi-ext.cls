@@ -90,7 +90,8 @@
 % \renewenvironment{table}{\def\@captype{table}}{}
 % \renewenvironment{figure}{\def\@captype{figure}}{}
 \renewcommand{\thanks}[1]{} % No thanks in this template
-\pagestyle{empty} % No page numbers
+%\pagestyle{empty} % No page numbers
+% Well... Paul vil have page numbers
 
 % -----------------------------------------------------------------------------
 % Paper Metadata
