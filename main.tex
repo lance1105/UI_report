@@ -528,18 +528,16 @@ solution, though it is interesting to proceed with infant trails.\todo{ohm... ot
 
 The breathing sensor made from the piezoresistive stretch fabric did not perform well in our evaluation. The material
 is able to depict breaths in the resistance change when stretched. However, the fluctuations are very low due to the 
-low actuation distance and therefore we needed to change the reference voltage to be able to see the change. Furthermore, 
-over time the nylon becomes more and more lax, resulting in the signal\todo{Mark J. is signal correct or is it resistance still?}
-becoming smaller in terms of fluctuation. We found that more than 30 min of continues use resulted in the signal
-disappearing in the general noise (muscle flex).\\
+low actuation distance and therefore we needed to change the reference voltage to be able to see the change. This lowered the presision of our readings, and made it hard to detect breaths. Furthermore, 
+over time the nylon becomes more and more lax, resulting in the signal becoming smaller in terms of fluctuation. We found that more than 30 min of continues use resulted in signal
+degradation at a level where it was not possible to visually detect breathing from the output graph. (muscle flex).\\
 From this we believe that this sensor construction is not suited for a breathing sensor as the material would be
 used for many hours a day during sleep periods. Investigating a revised sensor using the research from Vogl et al. \cite{stretcheband}
 which does not rely on a material being stretched, but rather a stitching, could be a more viable solution.
 
 Guardian Suit has many challenges to overcome before becoming a viable product. Beyond the fact that the breathing sensor needs
 to be reworked, the materials used as connectors does not handle washing as it is silver-plated. Furthermore, some engineering
-work would be needed to embed the micro controller also and have some sort of wireless connectivity with some software to interpret the
-signal\todo{Mark J. ohm... is this correctly formulated?} from the sensors. \\
+work would be needed to embed a micro controller and battery into the fabric, and have some sort of wireless connectivity to communicate with software to interpret the signals from the sensors. \\
 However, in terms of its problem solving capacity which is to help parents and guardians monitor their infants health and well-being
 during sleep it appears as a viable solution. Without any human experimentation it is still to early to determine the product a 
 success and without a solution to the breathing sensor only half of the recommended focus points of the American Academy of Pediatrics
